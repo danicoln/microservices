@@ -10,7 +10,7 @@ import java.util.UUID;
 @Setter
 public class Produto {
 
-    private UUID id;
+    private UUID id = UUID.randomUUID();
     private String nome;
     private Double valor;
 }

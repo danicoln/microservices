@@ -10,7 +10,7 @@ import java.util.UUID;
 @Setter
 public class ItemPedido {
 
-    private UUID id;
+    private UUID id = UUID.randomUUID();
     private Produto produto;
     private Integer quantidade;
 }
