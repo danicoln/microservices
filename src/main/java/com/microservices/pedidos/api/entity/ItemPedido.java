@@ -1,17 +1,16 @@
 package com.microservices.pedidos.api.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.util.UUID;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
+@Getter
+@Setter
 public class ItemPedido {
 
-    private UUID id = UUID.randomUUID();
+    private UUID id;
     private Produto produto;
     private Integer quantidade;
 }
