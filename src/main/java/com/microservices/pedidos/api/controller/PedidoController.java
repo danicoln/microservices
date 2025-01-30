@@ -1,11 +1,13 @@
 package com.microservices.pedidos.api.controller;
 
 import com.microservices.pedidos.api.entity.Pedido;
+import com.microservices.pedidos.api.service.PedidoService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
@@ -16,11 +18,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @Tag(name = "Pedidos", description = "Recurso para criar um novo pedido")
+@RequiredArgsConstructor
 @RestController
 @RequestMapping("/api/v1/pedidos")
 public class PedidoController {
 
     private final Logger logger = LoggerFactory.getLogger(PedidoController.class);
+    private final PedidoService pedidoService;
 
     @Operation(summary = "Cria um novo pedido",
             description = "Contém as operações para criar um novo pedido",
@@ -31,6 +35,7 @@ public class PedidoController {
     @PostMapping
     public ResponseEntity<Pedido> criar(@RequestBody Pedido pedido) {
         logger.info("Pedido recebido: {}", pedido);
+        pedido = pedidoService.enfileirarPedido(pedido);
         return ResponseEntity.status(HttpStatus.CREATED).body(pedido);
     }
 }
