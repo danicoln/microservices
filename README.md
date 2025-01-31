@@ -2,6 +2,8 @@
 
 Esta é uma aplicação Spring Boot para gerenciamento de pedidos.
 
+# Desenvolvimento da API de Pedidos
+
 ## Atualizações Recentes
 
 ### 1. Adição da Dependência SpringDoc
@@ -24,7 +26,10 @@ Esta é uma aplicação Spring Boot para gerenciamento de pedidos.
 - O `maven-compiler-plugin` foi configurado para incluir o Lombok como um processador de anotações.
 - O `spring-boot-maven-plugin` foi configurado para excluir o Lombok do empacotamento final.
 
+
+# Desenvolvimento do Microsserviço de Notificação de Pedidos
+
+
 ## Próximos Passos
 - Continuar o desenvolvimento da API de pedidos.
 - Implementar testes unitários e de integração.
-- Expandir a documentação da API utilizando o SpringDoc OpenAPI.
