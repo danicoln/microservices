@@ -1,8 +1,12 @@
 package com.microservices.pedidos.api.entity;
 
-import lombok.*;
-
-import java.util.UUID;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -10,7 +14,9 @@ import java.util.UUID;
 @Setter
 public class ItemPedido {
 
-    private UUID id = UUID.randomUUID();
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     private Produto produto;
     private Integer quantidade;
 }
